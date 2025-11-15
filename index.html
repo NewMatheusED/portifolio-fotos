@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Fotografia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>Portfólio</h1>
+            </div>
+            <nav class="nav">
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                    <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#retratos" class="nav-link">Retratos</a></li>
+                    <li><a href="#paisagens" class="nav-link">Paisagens</a></li>
+                    <li><a href="#eventos" class="nav-link">Eventos</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h2 class="hero-title">Lorem Ipsum</h2>
+            <p class="hero-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+        </div>
+    </section>
+
+    <!-- Retratos Section -->
+    <section class="gallery-section" id="retratos">
+        <div class="section-container">
+            <h2 class="section-title">Retratos</h2>
+            <p class="section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat numquam mollitia</p>
+            <div class="gallery-grid" id="retratosGallery">
+                <!-- Fotos serão carregadas via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Paisagens Section -->
+    <section class="gallery-section" id="paisagens">
+        <div class="section-container">
+            <h2 class="section-title">Paisagens</h2>
+            <p class="section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat numquam mollitia</p>
+            <div class="gallery-grid" id="paisagensGallery">
+                <!-- Fotos serão carregadas via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Eventos Section -->
+    <section class="gallery-section" id="eventos">
+        <div class="section-container">
+            <h2 class="section-title">Eventos</h2>
+            <p class="section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat numquam mollitia</p>
+            <div class="gallery-grid" id="eventosGallery">
+                <!-- Fotos serão carregadas via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section class="about-section" id="sobre">
+        <div class="section-container">
+            <h2 class="section-title">Sobre</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex consequatur nisi placeat deserunt. Doloribus quisquam sint maxime labore corporis veniam delectus est aperiam? Ipsa eum, enim deleniti quae cupiditate veniam.
+                </p>
+                <p class="about-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero repudiandae pariatur maiores voluptatibus, aperiam tenetur esse exercitationem delectus nostrum quam iste praesentium culpa ut iure? Ullam ad vero aliquid. Impedit.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section class="contact-section" id="contato">
+        <div class="section-container">
+            <h2 class="section-title">Contato</h2>
+            <p class="section-description">Entre em contato para projetos e colaborações.</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Email: seu-email@exemplo.com</p>
+                    <p>Instagram: @seuinstagram</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 lorem ipsum. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
