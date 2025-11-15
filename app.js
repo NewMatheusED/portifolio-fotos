@@ -333,11 +333,18 @@ $(document).ready(function() {
     $('a[href^="#"]').on('click', function(e) {
         e.preventDefault();
         
-        const target = $(this.getAttribute('href'));
+        const targetId = $(this).attr('href');
+        const target = $(targetId);
+        
         if (target.length) {
+            // Calcular posição considerando o header fixo
+            const headerHeight = $('.header').outerHeight();
+            const targetPosition = target.offset().top - headerHeight;
+            
+            // Animação suave de scroll
             $('html, body').animate({
-                scrollTop: target.offset().top - 60
-            }, 800);
+                scrollTop: targetPosition
+            }, 800, 'swing');
         }
     });
 });

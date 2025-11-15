@@ -29,10 +29,6 @@
     --transition: all 0.3s ease;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: var(--font-primary);
     color: var(--color-text);
@@ -428,8 +424,6 @@ body > * {
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.9) !important;
     border: none !important;
-    width: 50px;
-    height: 50px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -591,11 +585,6 @@ body > * {
         aspect-ratio: 4 / 3;
     }
 
-    .glide__arrow {
-        width: 40px;
-        height: 40px;
-    }
-
     .glide__arrow--left {
         left: 10px;
     }
@@ -668,11 +657,6 @@ body > * {
     .glide__slide img,
     .glide-image {
         aspect-ratio: 1 / 1;
-    }
-
-    .glide__arrow {
-        width: 35px;
-        height: 35px;
     }
 
     .glide__arrow svg {
