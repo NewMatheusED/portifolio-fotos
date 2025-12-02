@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Meta tags para configuração básica da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Fotografia</title>
+    <title>Portfólio de Fotografia</title>
+    
+    <!-- Links para estilos externos -->
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,12 +16,13 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Cabeçalho do site com navegação principal -->
     <header class="header">
         <div class="header-container">
             <div class="logo">
                 <h1>Portfólio</h1>
             </div>
+            <!-- Menu de navegação com âncoras internas -->
             <nav class="nav">
                 <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
                     <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -30,93 +34,188 @@
                 </button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#inicio" class="nav-link">Início</a></li>
-                    <li><a href="#retratos" class="nav-link">Retratos</a></li>
-                    <li><a href="#paisagens" class="nav-link">Paisagens</a></li>
-                    <li><a href="#eventos" class="nav-link">Eventos</a></li>
+                    <li><a href="#projetos" class="nav-link">Projetos</a></li>
                     <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#destaques" class="nav-link">Destaques</a></li>
+                    <li><a href="#clientes" class="nav-link">Clientes</a></li>
                     <li><a href="#contato" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h2 class="hero-title">Lorem Ipsum</h2>
-            <p class="hero-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-        </div>
-    </section>
-
-    <!-- Retratos Section -->
-    <section class="gallery-section" id="retratos">
-        <div class="section-container">
-            <h2 class="section-title">Retratos</h2>
-            <p class="section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat numquam mollitia</p>
-            <div class="gallery-grid" id="retratosGallery">
-                <!-- Fotos serão carregadas via JavaScript -->
+    <!-- Conteúdo principal do site -->
+    <main>
+        <!-- Seção Hero - Banner principal -->
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <h2 class="hero-title">Portfólio de Fotografia</h2>
+                <p class="hero-subtitle">Histórias contadas através de imagens</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Paisagens Section -->
-    <section class="gallery-section" id="paisagens">
-        <div class="section-container">
-            <h2 class="section-title">Paisagens</h2>
-            <p class="section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat numquam mollitia</p>
-            <div class="gallery-grid" id="paisagensGallery">
-                <!-- Fotos serão carregadas via JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Eventos Section -->
-    <section class="gallery-section" id="eventos">
-        <div class="section-container">
-            <h2 class="section-title">Eventos</h2>
-            <p class="section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat numquam mollitia</p>
-            <div class="gallery-grid" id="eventosGallery">
-                <!-- Fotos serão carregadas via JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre Section -->
-    <section class="about-section" id="sobre">
-        <div class="section-container">
-            <h2 class="section-title">Sobre</h2>
-            <div class="about-content">
-                <p class="about-text">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex consequatur nisi placeat deserunt. Doloribus quisquam sint maxime labore corporis veniam delectus est aperiam? Ipsa eum, enim deleniti quae cupiditate veniam.
-                </p>
-                <p class="about-text">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero repudiandae pariatur maiores voluptatibus, aperiam tenetur esse exercitationem delectus nostrum quam iste praesentium culpa ut iure? Ullam ad vero aliquid. Impedit.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato Section -->
-    <section class="contact-section" id="contato">
-        <div class="section-container">
-            <h2 class="section-title">Contato</h2>
-            <p class="section-description">Entre em contato para projetos e colaborações.</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p>Email: seu-email@exemplo.com</p>
-                    <p>Instagram: @seuinstagram</p>
+        <!-- Seção Sobre - Texto sobre a fotógrafa -->
+        <section class="about-section" id="sobre">
+            <div class="section-container">
+                <h2 class="section-title">Sobre</h2>
+                <div class="about-content">
+                    <!-- Foto da fotógrafa -->
+                    <div class="about-image-wrapper">
+                        <img src="images/sobre-foto.jpg" alt="Fotógrafa" class="about-image">
+                        <!-- Coloque sua foto na pasta images/ com o nome: sobre-foto.jpg -->
+                    </div>
+                    <!-- Texto sobre -->
+                    <div class="about-text-wrapper">
+                        <p class="about-text">
+                            Sou apaixonada por contar histórias através da fotografia. Há mais de 15 anos, a câmera me 
+                            acompanha em diferentes cantos do mundo, registrando a força da natureza, a energia dos esportes 
+                            e aqueles instantes simples que dizem muito sem precisar de palavras.
+                        </p>
+                        <p class="about-text">
+                            Meu olhar é guiado pela luz, pela curiosidade e pela vontade de traduzir sensações em imagens. 
+                            Já estive em competições esportivas, viagens longas e paisagens remotas, sempre buscando não só 
+                            o clique perfeito, mas a emoção verdadeira por trás dele.
+                        </p>
+                        <p class="about-text">
+                            A fotografia me ensinou a enxergar beleza no movimento, silêncio no caos e significado em pequenos 
+                            detalhes. E é isso que levo para cada trabalho: sensibilidade, entrega e a intenção de criar 
+                            memórias que façam sentido para quem vê – sejam atletas, marcas, famílias ou pessoas que simplesmente 
+                            amam boas histórias.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <!-- Seção de Projetos - Galerias de fotos -->
+        <section class="projects-section" id="projetos">
+            <div class="section-container">
+                <h2 class="section-title">Projetos</h2>
+                
+                <!-- Projeto: Entre Montanhas -->
+                <article class="project-item">
+                    <h3 class="project-title">"Entre Montanhas"</h3>
+                    <p class="section-description">
+                        Um projeto dedicado a registrar momentos especiais, cheios de afeto e espontaneidade. 
+                        Fotografias que contam histórias verdadeiras, desde pequenos gestos até celebrações marcantes, 
+                        valorizando a conexão entre as pessoas.
+                    </p>
+                    <div class="gallery-grid" id="entreMontanhasGallery">
+                        <!-- Fotos serão carregadas via JavaScript -->
+                        <!-- Coloque suas fotos na pasta: images/entre-montanhas/ -->
+                    </div>
+                </article>
+
+                <!-- Projeto: Água em Movimento -->
+                <article class="project-item">
+                    <h3 class="project-title">"Água em Movimento"</h3>
+                    <p class="section-description">
+                        Série que reúne diferentes esportes aquáticos e toda a energia que nasce da relação entre 
+                        corpo e água. Fotografias de natação, competições e cenas que unem força, fluidez e emoção 
+                        em cada movimento.
+                    </p>
+                    <div class="gallery-grid" id="aguaMovimentoGallery">
+                        <!-- Fotos serão carregadas via JavaScript -->
+                        <!-- Coloque suas fotos na pasta: images/agua-em-movimento/ -->
+                    </div>
+                </article>
+
+                <!-- Projeto: Silêncios da Natureza -->
+                <article class="project-item">
+                    <h3 class="project-title">"Silêncios da Natureza"</h3>
+                    <p class="section-description">
+                        Paisagens capturadas em viagens e caminhadas, revelando a calma, a imensidão e os detalhes 
+                        que muitas vezes passam despercebidos. Um convite a respirar fundo e sentir a paz dos lugares 
+                        que falam através do silêncio.
+                    </p>
+                    <div class="gallery-grid" id="silenciosNaturezaGallery">
+                        <!-- Fotos serão carregadas via JavaScript -->
+                        <!-- Coloque suas fotos na pasta: images/silencios-natureza/ -->
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção Destaques - Prêmios e reconhecimentos -->
+        <section class="highlights-section" id="destaques">
+            <div class="section-container">
+                <h2 class="section-title">⭐ Destaques da minha trajetória</h2>
+                <ul class="highlights-list">
+                    <li>Prêmio Essência da Emoção - Categoria Retratos de Família</li>
+                    <li>Menção Honrosa - Mostra Histórias Reais</li>
+                    <li>Prêmio Visão Aquática - Fotografia de Esportes</li>
+                    <li>Finalista - Water Motion Awards</li>
+                    <li>Menção Especial - Festival Luz Natural</li>
+                    <li>Prêmio Horizonte Nature - Série Paisagística</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Seção Clientes e Colaborações -->
+        <section class="clients-section" id="clientes">
+            <div class="section-container">
+                <h2 class="section-title">Clientes & Colaborações</h2>
+                <div class="clients-content">
+                    <div class="clients-column">
+                        <h3 class="clients-category">Família & Momentos Especiais</h3>
+                        <ul class="clients-list">
+                            <li>Família Monteiro</li>
+                            <li>Família Duarte</li>
+                            <li>Família Leal</li>
+                        </ul>
+
+                        <h3 class="clients-category">Esportes & Projetos Aquáticos</h3>
+                        <ul class="clients-list">
+                            <li>Instituto AquaMotion</li>
+                            <li>Clube Atlântico Sul</li>
+                            <li>Escola de Esportes Zero Grau</li>
+                            <li>Centro Esportivo BlueRise</li>
+                        </ul>
+                    </div>
+                    <div class="clients-column">
+                        <h3 class="clients-category">Viagens, Paisagens & Natureza</h3>
+                        <ul class="clients-list">
+                            <li>Revista Horizonte Aberto</li>
+                            <li>Projeto Trilhas do Sul</li>
+                            <li>Caminho Selvagem Fototrip</li>
+                        </ul>
+
+                        <h3 class="clients-category">Marcas & Pequenos Negócios</h3>
+                        <ul class="clients-list">
+                            <li>Pousada Pedra Branca</li>
+                            <li>Casa Verde Bistrô</li>
+                            <li>Hostel Maré Alta</li>
+                            <li>Essência Surf Store</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section class="contact-section" id="contato">
+            <div class="section-container">
+                <h2 class="section-title">Contato</h2>
+                <p class="section-description">Entre em contato para projetos e colaborações.</p>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <p>Email: seu-email@exemplo.com</p>
+                        <p>Instagram: @seuinstagram</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé do site -->
     <footer class="footer">
         <div class="footer-container">
-            <p>&copy; 2025 lorem ipsum. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Portfólio de Fotografia. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <!-- Scripts JavaScript -->
+    <!-- Glide para fazer o carrossel de fotos -->
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
     <script src="app.js"></script>
 </body>

@@ -1,19 +1,20 @@
-// Configuração das galerias
+// Configuração das galerias de projetos
 // Você pode especificar manualmente as imagens ou deixar vazio para carregamento automático
+// As fotos devem ser colocadas nas respectivas pastas dentro de images/
 const galleryConfig = {
-    retratos: {
-        folder: 'images/retratos/',
-        containerId: 'retratosGallery',
+    entreMontanhas: {
+        folder: 'images/entre-montanhas/',
+        containerId: 'entreMontanhasGallery',
         images: [] // Deixe vazio [] para carregamento automático, ou especifique: ['foto1.jpg', 'foto2.jpg']
     },
-    paisagens: {
-        folder: 'images/paisagens/',
-        containerId: 'paisagensGallery',
+    aguaMovimento: {
+        folder: 'images/agua-em-movimento/',
+        containerId: 'aguaMovimentoGallery',
         images: [] // Deixe vazio [] para carregamento automático, ou especifique: ['foto1.jpg', 'foto2.jpg']
     },
-    eventos: {
-        folder: 'images/eventos/',
-        containerId: 'eventosGallery',
+    silenciosNatureza: {
+        folder: 'images/silencios-natureza/',
+        containerId: 'silenciosNaturezaGallery',
         images: [] // Deixe vazio [] para carregamento automático, ou especifique: ['foto1.jpg', 'foto2.jpg']
     }
 };
@@ -348,8 +349,6 @@ $(document).ready(function() {
         }
     });
 });
-
-// Animação de scroll (fade-in ao entrar na viewport)
 $(document).ready(function() {
     const observerOptions = {
         threshold: 0.1,
@@ -365,21 +364,19 @@ $(document).ready(function() {
         });
     }, observerOptions);
     
-    // Observar seções
-    $('.gallery-section, .about-section, .contact-section').each(function() {
+    // Observar seções para animação de fade-in
+    $('.projects-section, .gallery-section, .about-section, .highlights-section, .clients-section, .contact-section').each(function() {
         observer.observe(this);
     });
 });
 
-// Carregar todas as galerias quando o DOM estiver pronto
 $(document).ready(function() {
-    // Carregar galerias
+
     Object.keys(galleryConfig).forEach(key => {
         const config = galleryConfig[key];
         loadGalleryImages(config.folder, config.containerId, config.images);
     });
     
-    // Adicionar animação inicial ao hero
     $('.hero-title, .hero-subtitle').addClass('fade-in');
 });
 

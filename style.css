@@ -5,104 +5,59 @@
     box-sizing: border-box;
 }
 
+/* Variáveis CSS - Paleta de cores e espaçamentos */
 :root {
-    --color-primary: #2c3e50;
-    --color-secondary: #7f8c8d;
-    --color-accent: #3498db;
-    --color-accent-light: #5dade2;
-    --color-text: #2c3e50;
-    --color-text-light: #7f8c8d;
-    --color-bg: #ecf0f1;
-    --color-bg-light: #d5dbdb;
-    --color-bg-warm: #f8f9fa;
-    --color-border: #bdc3c7;
+    /* Cores principais - Tema escuro */
+    --color-primary: #000000;
+    --color-secondary: #333333;
+    --color-accent: #ffffff;
+    --color-accent-light: #f5f5f5;
+    --color-text: #ffffff;
+    --color-text-light: #cccccc;
+    --color-bg: #000000;
+    --color-bg-light: #1a1a1a;
+    --color-bg-warm: #0f0f0f;
+    --color-border: #333333;
     --color-hero-text: #ffffff;
-    --color-gradient-start: #e8f4f8;
-    --color-gradient-mid: #f0f8f4;
-    --color-gradient-end: #f8f4e8;
+    
+    /* Tipografia */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    
+    /* Espaçamentos */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
     --spacing-xl: 6rem;
+    
+    /* Transições suaves */
     --transition: all 0.3s ease;
 }
 
+/* Estilos do corpo da página */
 body {
     font-family: var(--font-primary);
     color: var(--color-text);
     background-color: var(--color-bg);
-    background-image: 
-        radial-gradient(circle at 20% 30%, var(--color-gradient-start) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, var(--color-gradient-mid) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, var(--color-gradient-end) 0%, transparent 60%),
-        linear-gradient(135deg, 
-            rgba(232, 244, 248, 0.6) 0%, 
-            rgba(240, 248, 244, 0.5) 25%,
-            rgba(248, 244, 232, 0.4) 50%,
-            rgba(240, 248, 244, 0.5) 75%,
-            rgba(232, 244, 248, 0.6) 100%
-        );
-    background-attachment: fixed;
-    background-size: 100% 100%;
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 100px,
-            rgba(52, 152, 219, 0.03) 100px,
-            rgba(52, 152, 219, 0.03) 101px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 100px,
-            rgba(46, 204, 113, 0.03) 100px,
-            rgba(46, 204, 113, 0.03) 101px
-        );
-    pointer-events: none;
-    z-index: -1;
-    opacity: 0.5;
-}
+/* Removido padrão de fundo anterior - usando fundo sólido escuro */
 
-body > * {
-    position: relative;
-    z-index: 1;
-}
-
-/* Header */
+/* Header - Cabeçalho fixo com navegação */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.98) 0%,
-        rgba(248, 250, 252, 0.96) 50%,
-        rgba(245, 247, 250, 0.94) 100%
-    );
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     z-index: 1000;
-    border-bottom: 2px solid var(--color-border);
-    box-shadow: 
-        0 4px 20px rgba(44, 62, 80, 0.1),
-        0 1px 3px rgba(44, 62, 80, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     transition: var(--transition);
 }
 
@@ -162,13 +117,13 @@ body > * {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.03em;
-    color: var(--color-primary);
+    color: var(--color-text);
     position: relative;
     transition: var(--transition);
 }
 
 .logo:hover h1 {
-    color: var(--color-accent);
+    color: var(--color-accent-light);
 }
 
 .nav {
@@ -177,8 +132,8 @@ body > * {
 
 .menu-toggle {
     display: none;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.08));
-    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
     padding: var(--spacing-xs);
     position: relative;
@@ -186,19 +141,20 @@ body > * {
     height: 40px;
     border-radius: 8px;
     transition: var(--transition);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .menu-toggle:hover {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.12));
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     transform: translateY(-1px);
 }
 
 .menu-toggle svg {
     width: 24px;
     height: 24px;
-    color: var(--color-primary);
+    color: var(--color-text);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -236,7 +192,7 @@ body > * {
 }
 
 .nav-link:hover {
-    color: var(--color-accent);
+    color: var(--color-accent-light);
 }
 
 .nav-link::after {
@@ -246,7 +202,7 @@ body > * {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-accent);
+    background-color: var(--color-accent-light);
     transition: var(--transition);
 }
 
@@ -309,46 +265,35 @@ body > * {
     animation: fadeInUp 0.8s ease 0.2s both;
 }
 
-/* Gallery Sections */
-.gallery-section {
+/* Seção de Projetos - Container principal */
+.projects-section {
     padding: var(--spacing-xl) var(--spacing-md);
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: var(--color-bg);
     position: relative;
 }
 
-.gallery-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.5) 0%,
-        rgba(255, 255, 255, 0.2) 50%,
-        rgba(255, 255, 255, 0.5) 100%
-    );
-    pointer-events: none;
-    z-index: 0;
+/* Item de projeto individual */
+.project-item {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg) 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.gallery-section > * {
-    position: relative;
-    z-index: 1;
+.project-item:last-child {
+    margin-bottom: 0;
 }
 
-.gallery-section:nth-child(even) {
-    background-color: rgba(240, 248, 252, 0.4);
-}
-
-.gallery-section:nth-child(even)::before {
-    background: linear-gradient(
-        180deg,
-        rgba(240, 248, 252, 0.6) 0%,
-        rgba(240, 248, 252, 0.3) 50%,
-        rgba(240, 248, 252, 0.6) 100%
-    );
+/* Título do projeto */
+.project-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+    text-align: center;
 }
 
 .section-container {
@@ -360,8 +305,8 @@ body > * {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 300;
     letter-spacing: -0.02em;
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
     text-align: center;
 }
 
@@ -374,10 +319,11 @@ body > * {
     line-height: 1.7;
 }
 
-/* Glide Carrossel */
+/* Glide Carrossel - Galeria de imagens */
 .gallery-grid {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: var(--spacing-lg) auto 0;
+    width: 100%;
 }
 
 .glide {
@@ -385,9 +331,10 @@ body > * {
 }
 
 .glide__track {
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     background-color: var(--color-bg-light);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .glide__slides {
@@ -405,11 +352,12 @@ body > * {
 .glide-image {
     width: 100%;
     height: auto;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
     display: block;
     cursor: pointer;
     transition: var(--transition);
+    border-radius: 4px;
 }
 
 .glide__slide img:hover,
@@ -422,8 +370,8 @@ body > * {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9) !important;
-    border: none !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -431,8 +379,13 @@ body > * {
     justify-content: center;
     z-index: 10;
     transition: var(--transition);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     padding: 0;
+}
+
+.glide__arrow:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .glide__arrow:hover {
@@ -452,7 +405,7 @@ body > * {
 .glide__arrow svg {
     width: 24px;
     height: 24px;
-    color: var(--color-primary);
+    color: var(--color-text);
 }
 
 .glide__arrow:disabled {
@@ -480,7 +433,7 @@ body > * {
     height: 10px;
     border-radius: 50%;
     background: var(--color-border);
-    border: none;
+    border: 1px solid var(--color-text-light);
     cursor: pointer;
     padding: 0;
     transition: var(--transition);
@@ -488,7 +441,8 @@ body > * {
 }
 
 .glide__bullet--active {
-    background: var(--color-primary);
+    background: var(--color-text);
+    border-color: var(--color-text);
     opacity: 1;
     transform: scale(1.2);
 }
@@ -498,26 +452,140 @@ body > * {
     transform: scale(1.1);
 }
 
-/* About Section */
+/* Seção Sobre - Informações sobre a fotógrafa */
 .about-section {
     padding: var(--spacing-xl) var(--spacing-md);
     background-color: var(--color-bg);
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+    /* Flexbox para organizar foto e texto lado a lado */
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Wrapper da imagem */
+.about-image-wrapper {
+    flex: 0 0 400px;
+    max-width: 400px;
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Wrapper do texto */
+.about-text-wrapper {
+    flex: 1;
+    min-width: 0;
 }
 
 .about-text {
     font-size: clamp(1rem, 2vw, 1.125rem);
     line-height: 1.8;
     color: var(--color-text);
-    margin-bottom: var(--spacing-md);
-    text-align: center;
+    text-align: justify;
+    margin: 0 0 var(--spacing-md) 0;
 }
 
-/* Contact Section */
+.about-text:last-child {
+    margin-bottom: 0;
+}
+
+/* Seção de Destaques - Prêmios e reconhecimentos */
+.highlights-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--color-bg-light);
+}
+
+.highlights-list {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.highlights-list li {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-md);
+    position: relative;
+    font-style: italic;
+}
+
+.highlights-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-light);
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+/* Seção de Clientes e Colaborações */
+.clients-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--color-bg);
+}
+
+.clients-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.clients-column {
+    padding: var(--spacing-md);
+}
+
+.clients-category {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.clients-column:first-child .clients-category:first-child {
+    margin-top: 0;
+}
+
+.clients-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.clients-list li {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 2;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.clients-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-light);
+}
+
+/* Seção de Contato */
 .contact-section {
     padding: var(--spacing-xl) var(--spacing-md);
     background-color: var(--color-bg-light);
@@ -539,12 +607,13 @@ body > * {
     margin-bottom: var(--spacing-sm);
 }
 
-/* Footer */
+/* Footer - Rodapé do site */
 .footer {
     background-color: var(--color-primary);
-    color: #fff;
+    color: var(--color-text);
     padding: var(--spacing-md);
     text-align: center;
+    border-top: 1px solid var(--color-border);
 }
 
 .footer-container {
@@ -613,18 +682,14 @@ body > * {
         top: 60px;
         left: 0;
         right: 0;
-        background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.98) 0%,
-            rgba(248, 250, 252, 0.96) 100%
-        );
+        background: rgba(0, 0, 0, 0.98);
         backdrop-filter: blur(20px) saturate(180%);
         -webkit-backdrop-filter: blur(20px) saturate(180%);
         flex-direction: column;
         padding: var(--spacing-md);
         gap: var(--spacing-sm);
-        border-bottom: 2px solid var(--color-border);
-        box-shadow: 0 4px 20px rgba(44, 62, 80, 0.1);
+        border-bottom: 1px solid var(--color-border);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
@@ -648,10 +713,34 @@ body > * {
         padding: var(--spacing-lg) var(--spacing-md);
     }
 
+    .projects-section,
     .gallery-section,
     .about-section,
+    .highlights-section,
+    .clients-section,
     .contact-section {
         padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    /* Ajuste do layout sobre para mobile - foto acima do texto */
+    .about-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .about-image-wrapper {
+        flex: 1 1 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .about-text-wrapper {
+        flex: 1 1 100%;
+    }
+    
+    .clients-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
 
     .glide__slide img,
